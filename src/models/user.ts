@@ -6,6 +6,6 @@ export default class user extends model{
         let connection = await this.connection();
         return connection.getRepository(entity);
     }
-
+    
 
 }
