@@ -32,19 +32,24 @@ export default class service{
         return repository.save(entity);
     }
 
-    where = () => {
-        this.query.where();
+    where = (...params) => {
+        this.query.where(...params);
         return this;        
     }
-
-    limit = () => {
-        this.query.limit();
+    
+    limit = (...params) => {
+        this.query.limit(...params);
         return this;        
     }
-
-    offset = () => {
-        this.query.limit();
+    
+    offset = (...params) => {
+        this.query.ofset(...params);
         return this;
+    }
+    
+    get = async () => {
+        let repository = await this.repository();
+        return repository.find(this.query.build());
     }
 
 }
