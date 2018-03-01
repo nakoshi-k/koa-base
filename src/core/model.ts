@@ -22,4 +22,8 @@ export default class model{
         return repository.save(entity);
     }
 
+    where = () => {
+        
+    }
+
 }
