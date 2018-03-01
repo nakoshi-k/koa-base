@@ -17,9 +17,8 @@ render(app,{
 
 const root = resource.create()
 const users = resource.create("users").restful()
-users.get( "/test" , users.c.index );
 
-root.use("/users" , users.routes() , users.allowedMethods())
+root.use("/users" , users.routes() , users.allowedMethods() )
 
 
 app.use(root.routes())
