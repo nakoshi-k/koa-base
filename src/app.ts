@@ -1,11 +1,11 @@
-import * as Koa from "koa"
+import * as koa from "koa"
 import {resource} from './core/resource'
-import * as bodyParser from 'koa-bodyparser'
+import * as body_parser from 'koa-bodyparser'
 import * as render from 'koa-ejs'
 import * as path from 'path'
 
-const app = new Koa()
-app.use(bodyParser())
+const app = new koa()
+app.use(body_parser())
 
 render(app,{
     "root" : path.join( __dirname , 'views'),
