@@ -4,7 +4,7 @@ import query from "./query"
 
 export default class service{
     protected _table = "test";
-    private query;
+    private query : query;
     
     constructor(){
         this.query = new query();
@@ -43,13 +43,21 @@ export default class service{
     }
     
     offset = (...params) => {
-        this.query.ofset(...params);
+        this.query.offset(...params);
         return this;
     }
     
     get = async () => {
         let repository = await this.repository();
         return repository.find(this.query.build());
+    }
+
+    entity = async () => {
+
+    }
+    
+    entities = async () => {
+
     }
 
 }
