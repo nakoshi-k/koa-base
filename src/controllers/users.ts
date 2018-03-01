@@ -1,28 +1,31 @@
 
-export default class users{
+import controller from "../core/controller"
+import model from "../models"
+
+export default class users extends controller{
     
     index = async (ctx,next) => {
-        await ctx.render('/users/index');
+        await ctx.render('/users/index')
     }
     
     store = async (ctx,next) => {
-        await ctx.render('users/index');
+        await ctx.render('users/index')
     }
     
     show = async (ctx,next) => {
-        await ctx.render('users/index');
+        await ctx.render('users/index')
     }
     
     edit = async (ctx,next) => {
-        await ctx.render('users/index');
+        await ctx.render('users/index')
     }
 
     update = async (ctx,next) => {
-        await ctx.render('users/index');
+        await ctx.render('users/index')
     }
     
     destory = async (ctx,next) => {
-        await ctx.render('users/index');
+        await ctx.render('users/index')
     }
 
 }

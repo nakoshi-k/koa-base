@@ -1,4 +1,4 @@
-interface controller{
+export default interface controller{
     index?() : void
     create?() : void
     store?() : void

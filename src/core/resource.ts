@@ -2,10 +2,10 @@ import * as KoaRouter from 'koa-router';
 import controllers from "../controllers";
 
 class resource_class{
-    public create : KoaRouter = (controller = "") => {
-        const router : KoaRouter = new KoaRouter()
+    public create : (c?) => KoaRouter = (controller = "") => {
+        const router = new KoaRouter()
         if(controller !== ""){
-            router.controller =  new controllers[controller]()
+            router.c =  new controllers[controller]()
         }
         router.restful = (...middlewares) => { 
             this.restful(...[router,...middlewares , ])
@@ -14,17 +14,17 @@ class resource_class{
         return router;
     }
 
-    private restful = (...middlewares) => {
+    private restful : (...m) => KoaRouter = (...middlewares) => {
         const router = middlewares.shift();
-        if(!router.controller){
+        if(!router.c){
             return;
         }
-        router.get("/" , ...middlewares , router.controller.index )
-        router.post("/" , ...middlewares , router.controller.store )
-        router.get("/:id" , ...middlewares , router.controller.show )
-        router.get("/:id/edit" , ...middlewares , router.controller.edit)
-        router.put ("/:id" , ...middlewares , router.controller.update)
-        router.delete("/:id" , ...middlewares , router.controller.destory);
+        router.get("/" , ...middlewares , router.c.index )
+        router.post("/" , ...middlewares , router.c.store )
+        router.get("/:id" , ...middlewares , router.c.show )
+        router.get("/:id/edit" , ...middlewares , router.c.edit)
+        router.put ("/:id" , ...middlewares , router.c.update)
+        router.delete("/:id" , ...middlewares , router.c.destory);
         return router;
     }
 
