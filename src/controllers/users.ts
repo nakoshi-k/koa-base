@@ -1,6 +1,6 @@
 
 import controller from "../core/controller"
-import model from "../models"
+import services from "../services"
 
 export default class users extends controller{
     
