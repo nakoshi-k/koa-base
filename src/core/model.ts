@@ -13,5 +13,13 @@ export default class model{
         return connection.getRepository(entities[ this.table_name ]);
     }
 
+    create = () => {
+        return new entities[ this.table_name ]();
+    }
+    
+    save = async (entity) => {
+        let repository = await this.repository();
+        return repository.save(entity);
+    }
 
 }
