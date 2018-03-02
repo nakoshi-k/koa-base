@@ -6,7 +6,7 @@ import * as serve from 'koa-static'
 import * as path from 'path'
 const app = new koa()
 app.use(body_parser())
-
+import * as fs from "fs"
 
 
 //rendering engine
@@ -17,6 +17,12 @@ render(app,{
     "cache": false,
     "debug": false 
 });
+
+app.use(async ( ctx , next ) => {
+    const site = JSON.parse( fs.readFileSync( __dirname + "/config/site.json" , "utf8" ) );
+    ctx.state.site = site
+    await next();
+})
 
 app.use(async (ctx, next) => {
     try {
