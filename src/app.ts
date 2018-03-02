@@ -3,10 +3,14 @@ import {resource} from './core/resource'
 import * as body_parser from 'koa-bodyparser'
 import * as render from 'koa-ejs'
 import * as serve from 'koa-static'
+import * as session from 'koa-session'
+import * as passport from 'koa-passport'
+
 import * as path from 'path'
+import * as fs from "fs"
+
 const app = new koa()
 app.use(body_parser())
-import * as fs from "fs"
 
 
 //template engine
