@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^9.4.6",
+    "es6-promise": "^4.2.4",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-ejs": "^4.1.0",
     "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
     "mysql": "^2.15.0",
     "path": "^0.12.7",
     "reflect-metadata": "^0.1.12",
@@ -22,6 +24,18 @@
     "typescript": "^2.7.2"
   },
   "devDependencies": {
-    "@types/node": "^9.4.6"
+    "@types/node": "^9.4.6",
+    "choices.js": "^3.0.3",
+    "fetch-polyfill": "^0.8.2",
+    "flatpickr": "^4.1.4",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-loader": "^4.0.0",
+    "tsconfig-paths-webpack-plugin": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "umbrellajs": "^2.10.1",
+    "unminified-webpack-plugin": "^1.4.2",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
   }
 }

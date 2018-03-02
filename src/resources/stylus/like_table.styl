@@ -1,0 +1,50 @@
+.table
+    display table
+    widt: 100%
+    font-size 0.9rem
+    .theader
+        display table-header-group
+        color $table-cell-heading-color
+        text-align left
+
+    .tbody
+        display table-row-group        
+    .row
+        display table-row
+        > div
+            border $table-cell-border
+            border-width $table-cell-border-width
+            padding $table-cell-padding
+            vertical-align: top
+            display table-cell
+    &.is-bordered
+    > div
+    > .th
+        border-width: 1px
+    .row
+        &:last-child
+        > div,
+        > .th
+            border-bottom-width: 1px
+    &.is-fullwidth
+        width 100%
+    &.is-hoverable
+        .tbody
+            .row:not(.is-selected)
+                &:hover
+                    background-color $table-row-hover-background-color
+    &.is-striped
+        .tbody
+            .row:not(.is-selected)
+                &:hover
+                    background-color $table-striped-row-even-hover-background-color
+    &.is-narrow
+        .row > div,
+        .th
+            padding 0.25em 0.5em
+    &.is-striped
+        .tbody
+            .row:not(.is-selected)
+                &:nth-child(even)
+                    background-color $table-striped-row-even-background-color
+

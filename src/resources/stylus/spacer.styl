@@ -1,0 +1,41 @@
+size-unit = "rem"
+margin-key = 'margin'
+padding-key = 'padding'
+separator = '-'
+sizes = {
+    'none': 0,
+    'xxs': 0.125rem,
+    'xs': 0.25rem,
+    'sm': 0.5rem,
+    'md': 1rem,
+    'lg': 2rem,
+    'xl': 4rem,
+    'xxl': 8rem
+    }
+
+positions = {
+    'top': 'top',
+    'right': 'right',
+    'bottom': 'bottom',
+    'left': 'left'
+    }
+
+size_value(key,value)
+    if  key == 'none'
+        0
+    else
+        value
+
+for key, size in sizes
+   .{margin-key}{separator}{key} 
+        margin size_value(key, size)
+    
+   .{padding-key}{separator}{key} 
+        padding size_value(key, size)
+
+    for pos-key,position in positions
+            .{margin-key}{separator}{pos-key}{separator}{key} 
+                {margin-}{position} size_value(key, size)
+            
+            .{padding-key}{separator}{pos-key}{separator}{key} 
+                {padding-}{position} size_value(key, size)

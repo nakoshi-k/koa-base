@@ -1,0 +1,8 @@
+display-sizes = mobile tablet desktop widescreen fullhd
+.columns
+    &.is-reverse
+        flex-direction: row-reverse;
+    for display-size in display-sizes
+        +display-size() 
+            &.is-reverse-{display-size}
+                flex-direction: row-reverse;

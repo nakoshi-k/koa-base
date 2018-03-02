@@ -1,0 +1,115 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "bulma.styl",
+        "scope": null,
+        "escapedName": "bulma.styl",
+        "name": "bulma.styl",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/var/www/laravel/laravel"
+    ]
+  ],
+  "_from": "bulma.styl@latest",
+  "_id": "bulma.styl@0.6.11",
+  "_inCache": true,
+  "_location": "/bulma.styl",
+  "_nodeVersion": "8.7.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/bulma.styl-0.6.11.tgz_1510645960078_0.7190774369519204"
+  },
+  "_npmUser": {
+    "name": "log1x",
+    "email": "brandon@tendency.me"
+  },
+  "_npmVersion": "5.4.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "bulma.styl",
+    "scope": null,
+    "escapedName": "bulma.styl",
+    "name": "bulma.styl",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/bulma.styl/-/bulma.styl-0.6.11.tgz",
+  "_shasum": "3abf09d80fe9191aa29143a70469d9c711233294",
+  "_shrinkwrap": null,
+  "_spec": "bulma.styl",
+  "_where": "/var/www/laravel/laravel",
+  "author": {
+    "name": "Brandon Nifong",
+    "email": "brandon@tendency.me",
+    "url": "https://log1x.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Log1x/bulma.styl/issues"
+  },
+  "contributors": [
+    {
+      "name": "Jeremy Thomas",
+      "email": "bbxdesign@gmail.com",
+      "url": "http://jgthms.com"
+    }
+  ],
+  "dependencies": {},
+  "description": "Modern CSS framework based on Flexbox",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "postcss-cli": "^4.1.0",
+    "stylus": "^0.54.5"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-CWtETgVM6vdg9b4TTFoVrj0nwSlzfyTHXGE2Kj+CATDlADDnZ5PZuKWBAUowGDnLvLHQJh9PANCpIZDBhwJ23A==",
+    "shasum": "3abf09d80fe9191aa29143a70469d9c711233294",
+    "tarball": "https://registry.npmjs.org/bulma.styl/-/bulma.styl-0.6.11.tgz"
+  },
+  "files": [
+    "stylus",
+    "bulma.styl",
+    "LICENSE",
+    "README.md"
+  ],
+  "gitHead": "23f83c2b86c6706c913955175e174798b64e559f",
+  "homepage": "http://github.com/Log1x/bulma.styl",
+  "keywords": [
+    "css",
+    "stylus",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "license": "MIT",
+  "main": "bulma.styl",
+  "maintainers": [
+    {
+      "name": "log1x",
+      "email": "log1x@log1x.com"
+    }
+  ],
+  "name": "bulma.styl",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Log1x/bulma.styl.git"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-stylus && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --output ./css/bulma.css ./css/bulma.css",
+    "build-clean": "rm -rf css; mkdir css",
+    "build-stylus": "stylus bulma.styl --out css",
+    "start": "stylus -w bulma.styl --out css"
+  },
+  "version": "0.6.11"
+}

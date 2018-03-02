@@ -1,0 +1,216 @@
+bulma-path = "./bulma.styl/";
+
+@import bulma-path+"/bulma.styl"
+
+@import url(//fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 500;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Medium.otf) format('opentype');
+ }
+ 
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 700;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Bold.otf) format('opentype');
+ }
+ 
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 900;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
+ }
+html
+body
+  margin 0
+  padding 0
+  height 100%
+body
+  font-family 'Noto Sans Japanese'
+
+
+@import "./spacer.styl"
+@import "./like_table.styl"
+@import "./column_extend.styl"
+@import "./flush.styl"
+@import "./tab.styl"
+@import "./login.styl"
+
+
+form
+  margin 0
+  padding .3rem
+  width 100%
+fieldset
+  border none
+  padding-bottom 0.6rem
+legend
+  color $grey-light
+  border-bottom 1px solid hsla($grey-lighter,30%)
+  display block
+  width 100%
+  font-size $size-5
+  padding 0.2rem 0 0.2rem 0
+  margin-bottom 0.6rem
+  text-align right
+
+flatpickr-path = "../../../node_modules/flatpickr/dist/";
+@import  flatpickr-path+"flatpickr.min.css"
+@import  flatpickr-path+"plugins/confirmDate/confirmDate.css"
+@import  flatpickr-path+"themes/material_blue.css"
+
+choices-path = "../../../node_modules/choices.js/assets/styles/css/"
+@import "./choices"
+@import "./loading"
+@import "./modal"
+@import "./offset"
+
+
+section
+  position relative
+
+.panel-block
+  background $white
+.autocomplete-suggestions 
+  text-align left
+  cursor default
+  border 1px solid $white-ter
+  background #fff
+  box-shadow -1px 1px 3px rgba(0,0,0,.1)
+  position absolute
+  margin-top 0.3rem
+  display none
+  z-index 9999
+  max-height 254px
+  overflow hidden
+  overflow-y auto
+  box-sizing border-box;
+  border-radius 0.2rem
+
+.autocomplete-suggestion 
+  position relative
+  padding 0.6rem
+  line-height 1.1rem
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+  font-size 1.02rem
+  color $grey
+.autocomplete-suggestion b 
+  font-weight normal
+  color $link
+
+.autocomplete-suggestion.selected
+  background $white-ter
+
+form
+  position relative
+  .form-lock
+    display none;
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%;
+    background hsla($white, 40%)
+    .loading
+      position absolute
+      top 45%
+      left 45%
+    &.is-active
+      display block
+
+.thd-lock
+  background hsla($white, 40%)
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  display none 
+  flex-direction column
+  justify-content center
+  align-items center
+  &.is-active
+    display flex
+
+.plain-container
+    height 100%
+    width 100%
+
+.home-container
+    display flex
+    height 100%
+    width 100%
+    flex-direction column
+    justify-content center
+    align-items center
+    .top-link
+      a
+        color $primary
+      &:hover
+        color $primary-light
+
+dl.auth
+  padding 1rem 0
+  dt
+    font-weight bold
+  dd
+    padding-left 0.3rem
+
+.header-logout
+  width 100%
+  text-align left
+  padding 0.3rem 0 0.3rem 1rem
+  margin 0rem
+  height auto
+  line-height 1
+  font-size 0.8rem
+  align-items auto
+  justify-content start
+  border none
+  box-shadow none
+  &:hover
+  &:focus
+  &:active
+    border none
+    box-shadow none
+    outline none
+
+.togle-content
+    max-height 0
+    opacity 0 
+    transition max-height 0.3s ease-out 0s , opacity 0.3s ease-out 0s
+    overflow hidden
+    &.is-active
+      max-height 100% 
+      opacity 1 
+      transition max-height 0.3s ease-in 0s , opacity 0.333s ease-out 0s
+      
+.is-full
+  width 100%
+  display block
+
+.flex
+  display flex
+  &.wrap
+    flex-wrap wrap
+    justify-content flex-start
+  > div
+    padding .6rem
+
+.tree-index
+  li
+    margin 0
+    padding 1rem
+  ul
+    margin-left 1rem
+
+form.inline
+  display inline
+  width auto
+  padding 0

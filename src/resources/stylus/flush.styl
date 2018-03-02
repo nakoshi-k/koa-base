@@ -1,0 +1,42 @@
+$flush-background-color ?= $background
+$flush-padding ?= 1.5rem 2.5rem 1.5rem 1.5rem
+
+.flush
+    opacity 1
+    transition opacity 2s ease 
+    block()
+    background-color $flush-background-color
+    padding $flush-padding
+    position fixed
+    top 40%
+    width 100%
+    a:not(.button)
+        color currentColor
+        text-decoration underline
+    strong
+        color currentColor
+    code,
+    pre
+        background $white
+    pre code
+        background transparent
+    & > .delete
+        position absolute
+        right 0.5em
+        top 0.5em
+    .title,
+    .subtitle,
+    .content
+        color currentColor
+    for $name, $pair in $colors
+        $color = $pair['1']
+        $color-invert = $pair['2']
+        &.is-{$name}
+            background-color hsla($color,.8)
+            color $color-invert
+    .flush-message
+        max-width 60rem
+        margin 0 auto
+
+.flush-remove
+    opacity 0

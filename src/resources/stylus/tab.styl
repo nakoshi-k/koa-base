@@ -1,0 +1,14 @@
+.tab-container
+  position relative
+  display flex
+
+.tab-content
+  position relative
+  width 0
+  overflow hidden
+  opacity 0
+  transition width 0.7s ease ,opacity 0.7s ease
+
+  &.is-active
+    width 100%
+    opacity 1

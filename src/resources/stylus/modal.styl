@@ -1,0 +1,33 @@
+
+.light-modal-container
+  background hsla($white,20%)
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  display none
+  align-items center
+  &.is-active
+    display block
+  .light-modal
+    position absolute
+    background hsla($white,90%)
+    border-radius 0.05rem
+    top 10rem
+    left 40%
+    min-width 20rem
+    max-width 30rem
+    min-height 6rem 
+    padding 1.6rem 0.6rem 0.6rem 0.6rem
+    border solid 1px hsla($grey,30%)
+    font-size $size-7 rem
+    box-shadow:7px 7px 10px -9px $grey;
+    .delete
+      position absolute
+      right 0.6rem
+      top 0.6rem
+    for $name, $pair in $colors
+      $color = $pair['1']
+      &.is-{$name}
+        border-top solid 4px $color
