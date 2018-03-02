@@ -1,7 +1,7 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-var UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
-
+const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         "javascripts/app" : __dirname + '/src/resources/typescript/app.ts'
@@ -11,7 +11,7 @@ module.exports = {
       path : __dirname + "/src/public/",
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js"],
+        extensions: [".ts", ".tsx", ".js" , ".styl"],
         plugins: [new TsconfigPathsPlugin({
             configFile:  "./src/resources/tsconfig.json"
         }
@@ -19,7 +19,16 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, use : { loader: 'ts-loader' , options : { transpileOnly : true } } }
+            { 
+              test: /\.tsx?$/,
+              use : { 
+                  loader: 'ts-loader' ,
+                  options : {
+                       transpileOnly : true 
+                    } 
+                } 
+            }
+           
         ]
     },
     plugins : [
@@ -28,6 +37,6 @@ module.exports = {
                 compress : {warnings: false}
             }
         }),
-        new UnminifiedWebpackPlugin()
+        new UnminifiedWebpackPlugin(),
     ]
   };

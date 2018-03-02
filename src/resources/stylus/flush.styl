@@ -28,7 +28,7 @@ $flush-padding ?= 1.5rem 2.5rem 1.5rem 1.5rem
     .subtitle,
     .content
         color currentColor
-    for $name, $pair in $colors
+    for $name , $pair in $colors
         $color = $pair['1']
         $color-invert = $pair['2']
         &.is-{$name}

@@ -17,7 +17,7 @@ import {u} from "./extends/umbrella_extends";
 
 import * as Promise from "es6-promise";
 
-let THD = {
+let APP = {
     button : button,
     icon : icon,
     choices : choices,
@@ -35,10 +35,9 @@ let THD = {
     u : u
 };
 
-
 //confirm 
 
-const confirm_modal = new THD.modal("#confirm");
+const confirm_modal = new APP.modal("#confirm");
 confirm_modal.close = () => {
     if(confirm_modal.transaction){
         return;
@@ -51,7 +50,7 @@ confirm_modal.close = () => {
     confirm_modal.button.icon.change("fa-check");
 }
 
-THD["confirm"] = function(title,body,callback){
+APP["confirm"] = function(title,body,callback){
     confirm_modal.title(title);
     confirm_modal.body(body);
     
@@ -70,11 +69,11 @@ const light_confirm_modal = new light_modal("#light-modal-container" , {
     "close" : ".cancel,.delete"
 });
 
-THD["confirm_light"] = function(args){
+APP["confirm_light"] = function(args){
     light_confirm_modal.open(args)
 }
 
-THD["token"] = function(){
+APP["token"] = function(){
    const tag = document.querySelector("[name='csrf-token']")
    if(tag === null){
        return ""
@@ -84,27 +83,27 @@ THD["token"] = function(){
 
 
 //tab
-new THD.tab(".tabs")
+new APP.tab(".tabs")
 
 //flush
-new THD.flush("#flush")
+new APP.flush("#flush")
 
 //offset
-new THD.offset( "#offset-container" , "#main-container" , THD.cookie )
+new APP.offset( "#offset-container" , "#main-container" , APP.cookie )
 
 //dropdown
-new THD.dropdown(".has-dropdown")
+new APP.dropdown(".has-dropdown")
 
 //toggle
-new THD.toggle(".toggle")
+new APP.toggle(".toggle")
 
 //choices
-new THD.choices("[data-choice='on']")
+new APP.choices("[data-choice='on']")
 
 //screen controll
 const sc = new screen_control("#thd-lock");
-THD["lock"] = sc.lock;
-THD["unlock"] = sc.unlock;
+APP["lock"] = sc.lock;
+ApplicationCache["unlock"] = sc.unlock;
 
 //flatpicker
 import * as flatpickr from "flatpickr";
@@ -114,8 +113,8 @@ flatpickr(".calendar-time", {
     "enableTime": true,
     "enableSeconds" : true,
     "time_24hr" : true,
-    "plugins": [confirmDate({})]
+    "plugins": [new confirmDate({})]
 });
 
 
-window["THD"] = THD;
+window["APP"] = APP;
