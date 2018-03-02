@@ -7,6 +7,8 @@ import * as path from 'path'
 const app = new koa()
 app.use(body_parser())
 
+
+
 //rendering engine
 render(app,{
     "root" : path.join( __dirname , 'views'),
@@ -16,12 +18,26 @@ render(app,{
     "debug": false 
 });
 
+app.use(async (ctx, next) => {
+    try {
+      await next();
+      if(ctx.status === 404){
+        await ctx.render('404');
+      };
+    } catch (err) {
+        // will only respond with JSON
+        ctx.status = err.statusCode || err.status || 500;
+        ctx.body = {
+            message: "error"
+        };
+    }
+})
+
 //routing
 import route from "./route"
-app.use(route.routes())
-.use(route.allowedMethods())
+app.use(route.routes()).use(route.allowedMethods() )
 
 //static files define
 app.use(serve(__dirname + '/public'));
 
-app.listen(3001);
+app.listen(3000);

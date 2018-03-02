@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve" : "ts-node src/app.ts",
+    "build.css" : "stylus ./src/resources/stylus/app.styl -o ./src/public/stylesheets/" ,
+    "build.script" : "webpack -d" ,
+    "watch" : " nodemon -e ts -w ./src -x npm run serve npm run build.css -- -w & npm run build.script -- -w ",
+    "browsersync" : "browser-sync start --proxy localhost:3000 --port 3010 --files=\"src/**/*.*\" --files=\"webroot/**/*.*\"",
+    "dev" : "npm run browsersync & npm run watch"
   },
   "author": "",
   "license": "ISC",
