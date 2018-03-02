@@ -9484,6 +9484,7 @@ form .form-lock.is-active {
   height: 100%;
   width: 100%;
 }
+.error-container,
 .home-container {
   display: flex;
   height: 100%;
@@ -9492,9 +9493,11 @@ form .form-lock.is-active {
   justify-content: center;
   align-items: center;
 }
+.error-container .top-link a,
 .home-container .top-link a {
   color: #00d1b2;
 }
+.error-container .top-link:hover,
 .home-container .top-link:hover {
   color: $primary-light;
 }

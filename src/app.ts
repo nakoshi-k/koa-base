@@ -9,7 +9,7 @@ app.use(body_parser())
 import * as fs from "fs"
 
 
-//rendering engine
+//template engine
 render(app,{
     "root" : path.join( __dirname , 'views'),
     "layout": 'template',
@@ -24,18 +24,27 @@ app.use(async ( ctx , next ) => {
     await next();
 })
 
+//on error
 app.use(async (ctx, next) => {
     try {
       await next();
       if(ctx.status === 404){
-        await ctx.render('404');
+        ctx.state.error = {
+            "state" : ctx.status,
+            "title" : "Not Found",
+            "message" : "your request contents is not on the server"
+        }
+        await ctx.render('error');
       };
     } catch (err) {
         // will only respond with JSON
         ctx.status = err.statusCode || err.status || 500;
-        ctx.body = {
-            message: "error"
-        };
+        ctx.state.error = {
+            "state" : ctx.status,
+            "title" : "Error",
+            "message" : "internal server error"
+        }
+        await ctx.render('error');
     }
 })
 
