@@ -5,53 +5,32 @@ import * as render from 'koa-ejs'
 import * as serve from 'koa-static'
 import * as session from 'koa-session'
 import * as passport from 'koa-passport'
-
 import * as path from 'path'
-import * as fs from "fs"
 
 const app = new koa()
 app.use(body_parser())
 
-
 //template engine
 render(app,{
     "root" : path.join( __dirname , 'views'),
-    "layout": 'template',
+    "layout": 'layout',
     "viewExt": 'html',
     "cache": false,
     "debug": false 
 });
 
-app.use(async ( ctx , next ) => {
-    const config = fs.readFileSync( __dirname + "/config/site.json" , "utf8" );
-    const site = JSON.parse( config );
-    ctx.state.site = site
-    await next();
-})
+// read config
+import config from "./config"
+app.use(config);
+
+// read helper
+
+import helper from "./helper"
+app.use(helper);
 
 //on error
-app.use(async (ctx, next) => {
-    try {
-      await next();
-      if(ctx.status === 404){
-        ctx.state.error = {
-            "state" : ctx.status,
-            "title" : "Not Found",
-            "message" : "your request contents is not on the server"
-        }
-        await ctx.render('error');
-      };
-    } catch (err) {
-        // will only respond with JSON
-        ctx.status = err.statusCode || err.status || 500;
-        ctx.state.error = {
-            "state" : ctx.status,
-            "title" : "Error",
-            "message" : "internal server error"
-        }
-        await ctx.render('error');
-    }
-})
+import error from "./error"
+app.use(error)
 
 //routing
 import route from "./route"

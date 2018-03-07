@@ -1,6 +1,4 @@
-
-import controller from "../core/controller"
-import services from "../services"
+import {controller} from "../core"
 
 export default class users extends controller{
     

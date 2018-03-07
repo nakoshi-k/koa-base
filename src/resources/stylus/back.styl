@@ -1,4 +1,4 @@
-bulma-path = "./bulma.styl/";
+bulma-path = "./bulma.styl";
 
 @import bulma-path+"/bulma.styl"
 
@@ -33,12 +33,12 @@ body
   font-family 'Noto Sans Japanese'
 
 
-@import "./spacer.styl"
-@import "./like_table.styl"
-@import "./column_extend.styl"
-@import "./flush.styl"
-@import "./tab.styl"
-@import "./login.styl"
+@import "./components/spacer.styl"
+@import "./components/like_table.styl"
+@import "./components/column_extend.styl"
+@import "./components/flush.styl"
+@import "./components/tab.styl"
+@import "./components/login.styl"
 
 
 form
@@ -64,10 +64,10 @@ flatpickr-path = "../../../node_modules/flatpickr/dist/";
 @import  flatpickr-path+"themes/material_blue.css"
 
 choices-path = "../../../node_modules/choices.js/assets/styles/css/"
-@import "./choices"
-@import "./loading"
-@import "./modal"
-@import "./offset"
+@import "./components/choices"
+@import "./components/loading"
+@import "./components/modal"
+@import "./components/offset"
 
 
 section
@@ -141,7 +141,8 @@ form
 .plain-container
     height 100%
     width 100%
-
+    
+.error-container,
 .home-container
     display flex
     height 100%

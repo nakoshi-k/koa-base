@@ -1,7 +1,7 @@
 import * as KoaRouter from 'koa-router';
 import controllers from "../controllers";
 
-class resource_class{
+class resource{
     public create : (c?) => KoaRouter = (controller = "") => {
         const router = new KoaRouter()
         if(controller !== ""){
@@ -29,5 +29,5 @@ class resource_class{
     }
 
 }
-
-export const resource = new resource_class();
+const instance = new resource();
+export default instance
