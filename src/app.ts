@@ -23,7 +23,8 @@ render(app,{
 });
 
 app.use(async ( ctx , next ) => {
-    const site = JSON.parse( fs.readFileSync( __dirname + "/config/site.json" , "utf8" ) );
+    const config = fs.readFileSync( __dirname + "/config/site.json" , "utf8" );
+    const site = JSON.parse( config );
     ctx.state.site = site
     await next();
 })
@@ -54,7 +55,7 @@ app.use(async (ctx, next) => {
 
 //routing
 import route from "./route"
-app.use(route.routes()).use(route.allowedMethods() )
+app.use(route.routes()).use( route.allowedMethods() )
 
 //static files define
 app.use(serve(__dirname + '/public'));
