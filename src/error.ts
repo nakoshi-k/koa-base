@@ -1,4 +1,4 @@
-const error = async (ctx, next) => {
+export default async (ctx, next) => {
     try {
       await next();
       if(ctx.status === 404){
@@ -20,4 +20,3 @@ const error = async (ctx, next) => {
         await ctx.render('error')
     }
 }
-export default error

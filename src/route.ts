@@ -1,4 +1,4 @@
-import resource from './core/resource'
+import {resource} from './core'
 
 const route = resource.create()
 const users = resource.create("users").restful()

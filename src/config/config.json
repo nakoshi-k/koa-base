@@ -2,5 +2,8 @@
    "host" : "localhost",
    "profile" : {
        "name" : "koa application"
+   },
+   "static" : {
+
    }
 }

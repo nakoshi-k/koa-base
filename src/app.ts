@@ -1,5 +1,4 @@
 import * as koa from "koa"
-import {resource} from './core/resource'
 import * as body_parser from 'koa-bodyparser'
 import * as render from 'koa-ejs'
 import * as serve from 'koa-static'

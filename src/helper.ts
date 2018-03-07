@@ -4,7 +4,7 @@ import { helper } from "./core"
 export default async (ctx, next) => {
     let helper : { [prop:string] : helper} = {};
     helper.scripts = new helpers.scripts()
-    helper.profile = new helpers.profile()
+    helper.profile = new helpers.profile(ctx._config.profile)
     ctx.state._h = helper
     await next();       
 }
