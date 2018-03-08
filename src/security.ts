@@ -6,7 +6,6 @@ export default class security{
     constructor(app , config){
         app.keys = config.read("secret")
         const session_config =  config.read("session")
-
         app.use(session(session_config, app))
         app.use( new CSRF( config.read("csrf") ) )
     }

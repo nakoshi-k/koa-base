@@ -6,7 +6,7 @@ export default async (ctx, next) => {
     const blocks : helpers.blocks = new helpers.blocks()
     helper.blocks = blocks
     helper.scripts = blocks.area("scripts")
-    helper.profile = new helpers.profile(ctx._config.profile)
+    helper.profile = new helpers.profile(ctx.config.profile)
     ctx.state._h = helper
     await next()      
 }

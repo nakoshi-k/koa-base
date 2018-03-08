@@ -16,7 +16,7 @@ export default class config{
     }
 
     middleware = async ( ctx , next ) => {
-        ctx._config = this.data
+        ctx.config = this.data
         await next();
     }
 };

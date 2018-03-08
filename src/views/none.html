@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/stylesheets/app.css">
     <title><%- _h.profile.name %></title>
   </head>
-  <body>
+  <body data-csrf="<%= csrf %>">
     
   <%- body %>
   <script src="/javascripts/app.js"></script>
