@@ -5,9 +5,9 @@ export default async (ctx, next) => {
         ctx.state.error = {
             "state" : ctx.status,
             "title" : "Not Found",
-            "message" : "your request content is not on the server"
+            "message" : "your request page is not on the server"
         }
-        await ctx.render('error')
+        await ctx.render('error' , {"layout" : "none"})
       };
     } catch (err) {
         // will only respond with JSON

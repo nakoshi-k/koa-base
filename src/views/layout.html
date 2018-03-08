@@ -5,9 +5,19 @@
     <link rel="stylesheet" href="/stylesheets/app.css">
     <title><%- _h.profile.name %></title>
   </head>
-  <body>
-<%- body %>
-<script src="/javascripts/app.js"></script>
-<%- _h.scripts.read() %>
+  <body data-csrf="<%= csrf %>">
+    
+    <div class="container">
+
+      <div class="row">
+        <main class="column"><%- body %></main>
+        <satellite class="column"><%- _h.blocks.read("sub") %></satellite>
+      </div>
+      
+    </div>
+
+  
+    <script src="/javascripts/app.js"></script>
+    <%- _h.scripts.read() %>
   </body>
 </html>

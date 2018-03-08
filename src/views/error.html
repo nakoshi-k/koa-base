@@ -8,5 +8,8 @@
 </error>
 
 <%  
-    _h.scripts.append = `<script>console.log("test")</script>`;
+const page_script = `
+<script>console.log("test")</script>
+`;
+_h.scripts.append(page_script);
 %>

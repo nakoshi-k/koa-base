@@ -1,7 +1,9 @@
 import profile from "./profile"
-import scripts from "./scripts"
+import form from "./form"
+import blocks from "./blocks"
 
 export {
     profile,
-    scripts
+    form,
+    blocks
 }
