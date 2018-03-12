@@ -9,6 +9,7 @@ const app = new koa()
 
 // read config
 import config_mod from "./config"
+
 const config = new config_mod();
 app.use( config.middleware );
 
